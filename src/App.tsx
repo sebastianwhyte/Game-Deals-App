@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import {Container} from "@mui/system";
+import Grid from "@mui/material/Grid"
+import Box from "@mui/material/Box";
 import Header from './components/Header'
 import ButtonContainer from './components/Buttons';
-import logo from './images/game-controller.svg';
-import Container from "@mui/material/Container";
+import Logo from './components/Logo'
 
-{/* import logo from './logo.svg'; */}
 
+{/*
 function App() 
 {
   return (
@@ -27,3 +29,20 @@ function App()
 }
 
 export default App;
+*/}
+
+
+export default function App()
+{
+   return (
+      <div className='App'>
+         <Container maxWidth="xl" sx={{marginTop:0}} >
+            <Box justifyContent='center' alignItems='center' minHeight='100vh' style={{ color: 'white', backgroundColor: '#174cfc' }}>
+                  <Logo />
+                  <Header message={'Game Deals App'}/>
+                  <ButtonContainer />
+            </Box>
+         </Container>
+      </div>
+   )
+}

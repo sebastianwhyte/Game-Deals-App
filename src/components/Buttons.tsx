@@ -1,18 +1,14 @@
+import { ButtonGroup } from "@mui/material";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 import { useState } from "react";
 
-interface ButtonProps
-{
-    message: string;
-}
 
-
-function Buttons(props: ButtonProps)
-{   
-    return (
-        <button className='buttons' onClick={handleClick}>{props.message}</button>
-    )
-}
-
+const buttons = [
+    <Button key='view-stores'>View Stores</Button>,
+    <Button key='list-all-deals'>List All Deals</Button>,
+    <Button key='game-lookup'>Game Lookup By Title</Button>
+];
 
 function handleClick()
 {
@@ -21,16 +17,16 @@ function handleClick()
     );
 }
 
-
 export default function ButtonContainer()
 {
-    const [msg, setMsg] = useState<string>('');
-
     return (
         <div>
-            <Buttons message={'View Stores'} />
-            <Buttons message={'List of All Deals'} />
-            <Buttons message={'Game Lookup By Title'} />
-         </div>
+            <ButtonGroup 
+                orientation="vertical"
+                aria-label="vertical contained button group"
+                variant="contained" 
+                onClick={handleClick}>{buttons}
+                </ButtonGroup>
+        </div>
     )
 }

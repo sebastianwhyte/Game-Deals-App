@@ -7,8 +7,11 @@ interface HeaderProps
 export default function Header (props: HeaderProps)
 {
     return (
-        <header>
-            <h1>{props.message}</h1>
-        </header>
+        <div>
+            <header>
+                <h1>{props.message}</h1>
+                <h6>Made by Sebastian Whyte</h6>
+            </header>
+        </div>
     )
 }
