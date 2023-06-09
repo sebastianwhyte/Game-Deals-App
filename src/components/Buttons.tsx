@@ -1,21 +1,31 @@
+import React, {Component,} from "react";
 import { ButtonGroup } from "@mui/material";
 import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import { useState } from "react";
+import { Route } from "react-router-dom";
 
 
 const buttons = [
-    <Button key='view-stores'>View Stores</Button>,
-    <Button key='list-all-deals'>List All Deals</Button>,
-    <Button key='game-lookup'>Game Lookup By Title</Button>
+    <Button key='view-stores' onClick={() => displayStores()}>View Stores</Button>,
+    <Button key='list-all-deals' onClick={() => displayAllDeals()}>List All Deals</Button>,
+    <Button key='game-lookup' onClick={() => displayGameLookup()}>Game Lookup By Title</Button>
 ];
 
-function handleClick()
+
+function displayStores()
 {
-    return (
-        alert('You clicked me')
-    );
+    alert('Stores: Steam, Gamers Gate, Green Man Gaming, Amazon, GameStop');
 }
+
+function displayAllDeals()
+{
+    alert('List All Deals');
+}
+
+function displayGameLookup()
+{
+    alert('Game Lookup By Title');
+}
+
 
 export default function ButtonContainer()
 {
@@ -25,7 +35,8 @@ export default function ButtonContainer()
                 orientation="vertical"
                 aria-label="vertical contained button group"
                 variant="contained" 
-                onClick={handleClick}>{buttons}
+                >
+                  {buttons}
                 </ButtonGroup>
         </div>
     )
