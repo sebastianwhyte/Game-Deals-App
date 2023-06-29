@@ -1,23 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import {Container} from "@mui/system";
-import Box from "@mui/material/Box";
-import Header from './components/Header'
-import ButtonContainer from './components/Buttons';
-import Logo from './components/Logo'
-
+import AppMenu from './pages/AppMenu';
+import Stores from './components/Stores';
+import ListDeals from './pages/ListDeals';
+import GameLookup from './pages/GameLookup';
 
 export default function App()
 {
    return (
       <div className='App'>
-         <Container maxWidth="xl" sx={{marginTop:0}} >
-            <Box justifyContent='center' alignItems='center' minHeight='100vh' minWidth='100vw' style={{ color: 'white', backgroundColor: '#174cfc' }}>
-                  <Logo />
-                  <Header message={'Game Deals App'}/>
-                  <ButtonContainer />
-            </Box>
-         </Container>
+			 <Routes>
+			 	<Route path='/' element={<AppMenu />} />
+			 	<Route path='/stores' element={<Stores />}/>
+				<Route path='/deals' element={<ListDeals />} />
+				<Route path='/game-lookup' element={<GameLookup />} />
+			</Routes>
       </div>
    )
 }
